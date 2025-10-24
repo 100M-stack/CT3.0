@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conto Termico 3.0 - Incentivi per l'efficienza energetica</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="nav-logo">💡</span>
+                <span class="nav-title">Conto Termico 3.0</span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#beneficiari" class="nav-link">Chi può accedere</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#interventi" class="nav-link">Interventi ammessi</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#confronto" class="nav-link">Confronto CT 2.0 vs 3.0</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#accesso" class="nav-link">Come accedere</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#percentuali" class="nav-link">Percentuali &amp; Massimali</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#info" class="nav-link">Info &amp; Vantaggi</a>
+                </li>
+            </ul>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Back to top button -->
+    <button class="back-to-top" id="backToTop" aria-label="Torna su">
+        <span class="back-to-top-icon">↑</span>
+    </button>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="hero-title-main">Conto Termico 3.0</span>
+                    <span class="hero-title-sub">Incentivi per l'efficienza energetica e le fonti rinnovabili</span>
+                </h1>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-value">900</span>
+                        <span class="stat-label">milioni € disponibili</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-value">25 dic 2025</span>
+                        <span class="stat-label">In vigore dal</span>
+                    </div>
+                </div>
+                <div class="hero-actions">
+                    <button class="btn btn--primary btn--lg" onclick="scrollToSection('beneficiari')">Inizia esplorazione</button>
+                    <button class="btn btn--outline btn--lg" onclick="scrollToSection('confronto')">Confronta con CT 2.0</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beneficiari Section -->
+    <section id="beneficiari" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Chi può accedere</h2>
+                <p class="section-subtitle">6 categorie di beneficiari con incentivi fino al 100%</p>
+            </div>
+            <div class="beneficiari-grid">
+                <div class="beneficiario-card">
+                    <div class="card-icon pa-icon">🏛️</div>
+                    <h3 class="card-title">Pubbliche Amministrazioni</h3>
+                    <p class="card-subtitle">Ministeri, Regioni, Province, Comuni, Scuole, Università, Ospedali, ASL</p>
+                    <div class="card-incentivo">Fino al <strong>100%</strong></div>
+                    <p class="card-note">100% per comuni &lt;15.000 abitanti, scuole, ospedali</p>
+                </div>
+                
+                <div class="beneficiario-card">
+                    <div class="card-icon terzo-settore-icon">🤝</div>
+                    <div class="card-badge novita">NOVITÀ</div>
+                    <h3 class="card-title">Enti del Terzo Settore</h3>
+                    <p class="card-subtitle">RSA, Associazioni sportive, ONLUS, Fondazioni, Enti non profit</p>
+                    <div class="card-incentivo">Fino al <strong>65-100%</strong></div>
+                    <p class="card-note">Equiparati alle PA</p>
+                </div>
+                
+                <div class="beneficiario-card">
+                    <div class="card-icon terziario-icon">🏢</div>
+                    <div class="card-badge novita">NOVITÀ</div>
+                    <h3 class="card-title">Privati Settore Terziario</h3>
+                    <p class="card-subtitle">Imprese del terziario, Edifici non residenziali privati</p>
+                    <div class="card-incentivo">Fino al <strong>65%</strong></div>
+                    <p class="card-note">Prima volta ammessi agli interventi di efficienza energetica</p>
+                </div>
+                
+                <div class="beneficiario-card">
+                    <div class="card-icon residenziale-icon">🏠</div>
+                    <h3 class="card-title">Privati Residenziale</h3>
+                    <p class="card-subtitle">Persone fisiche, Condomini, Prima e seconda casa</p>
+                    <div class="card-incentivo">Fino al <strong>65%</strong></div>
+                    <p class="card-note">Solo fonti rinnovabili termiche, NO involucro</p>
+                </div>
+                
+                <div class="beneficiario-card">
+                    <div class="card-icon cer-icon">⚡</div>
+                    <div class="card-badge novita">NOVITÀ</div>
+                    <h3 class="card-title">Comunità Energetiche Rinnovabili</h3>
+                    <p class="card-subtitle">CER, Configurazioni autoconsumo collettivo, Membri CER</p>
+                    <div class="card-incentivo">Fino al <strong>65%</strong></div>
+                </div>
+                
+                <div class="beneficiario-card">
+                    <div class="card-icon imprese-icon">🏭</div>
+                    <div class="card-badge novita">NOVITÀ</div>
+                    <h3 class="card-title">Imprese</h3>
+                    <p class="card-subtitle">Aziende settore produttivo, PMI</p>
+                    <div class="card-incentivo">Incentivo <strong>variabile</strong></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interventi Section -->
+    <section id="interventi" class="section section--alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Interventi ammessi</h2>
+                <p class="section-subtitle">Due categorie di interventi con destinatari diversi</p>
+            </div>
+            
+            <div class="tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="efficienza">
+                        <span class="tab-icon">🏠</span>
+                        <span class="tab-text">Efficienza Energetica</span>
+                    </button>
+                    <button class="tab-btn" data-tab="rinnovabili">
+                        <span class="tab-icon">🌱</span>
+                        <span class="tab-text">Fonti Rinnovabili Termiche</span>
+                    </button>
+                </div>
+                
+                <div class="tab-content">
+                    <div id="efficienza-tab" class="tab-panel active">
+                        <div class="tab-destinatari">
+                            <strong>Destinatari:</strong> PA, Enti Terzo Settore, Privati terziario <span class="highlight-red">(NO residenziale)</span>
+                        </div>
+                        <div class="interventi-grid">
+                            <div class="intervento-card">
+                                <div class="intervento-icon">🧱</div>
+                                <h4>Isolamento termico</h4>
+                                <p>Cappotto pareti, coperture, solai</p>
+                            </div>
+                            <div class="intervento-card">
+                                <div class="intervento-icon">🪟</div>
+                                <h4>Sostituzione infissi</h4>
+                                <p>Serramenti ad alta efficienza</p>
+                            </div>
+                            <div class="intervento-card">
+                                <div class="intervento-badge novita">NOVITÀ</div>
+                                <div class="intervento-icon">🌞</div>
+                                <h4>Schermature solari</h4>
+                                <p>Frangisole, tende, dispositivi anti-surriscaldamento</p>
+                            </div>
+                            <div class="intervento-card">
+                                <div class="intervento-icon">💡</div>
+                                <h4>Illuminazione LED</h4>
+                                <p>Relamping interno ed esterno</p>
+                            </div>
+                            <div class="intervento-card">
+                                <div class="intervento-icon">🤖</div>
+                                <h4>Building automation</h4>
+                                <p>Sistemi BACS conformi CEI EN 15232</p>
+                            </div>
+                            <div class="intervento-card">
+                                <div class="intervento-icon">🏢</div>
+                                <h4>Trasformazione in nZEB</h4>
+                                <p>Edifici a energia quasi zero</p>
+                            </div>
+                            <div class="intervento-card">
+                                <div class="intervento-badge novita">NOVITÀ</div>
+                                <div class="intervento-icon">🏗️</div>
+                                <h4>Demolizione e ricostruzione nZEB</h4>
+                                <p>Solo PA, ampliamento fino al 25%</p>
+                            </div>
+                            <div class="intervento-card">
+                                <div class="intervento-badge novita">NOVITÀ</div>
+                                <div class="intervento-badge special">Solo con PDC</div>
+                                <div class="intervento-icon">🚗</div>
+                                <h4>Colonnine ricarica EV</h4>
+                                <p>Solo se abbinate a pompa di calore elettrica</p>
+                            </div>
+                            <div class="intervento-card">
+                                <div class="intervento-badge novita">NOVITÀ</div>
+                                <div class="intervento-badge special">Solo con PDC</div>
+                                <div class="intervento-icon">☀️</div>
+                                <h4>Fotovoltaico con accumulo</h4>
+                                <p>Solo se abbinati a pompa di calore elettrica</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="rinnovabili-tab" class="tab-panel">
+                        <div class="tab-destinatari">
+                            <strong>Destinatari:</strong> <span class="highlight-green">Tutti i beneficiari</span>
+                        </div>
+                        <div class="interventi-grid">
+                            <div class="intervento-card">
+                                <div class="intervento-icon">🌡️</div>
+                                <h4>Pompe di calore elettriche</h4>
+                                <p>Aria-acqua, acqua-acqua, geotermiche</p>
+                                <div class="requisiti">COP minimo Ecodesign, cert. UNI EN 14825</div>
+                            </div>
+                            <div class="intervento-card">
+                                <div class="intervento-icon">🔥</div>
+                                <h4>Pompe di calore a gas</h4>
+                                <p>Sostituzione generatore esistente</p>
+                            </div>
+                            <div class="intervento-card">
+                                <div class="intervento-icon">🔧</div>
+                                <h4>Sistemi ibridi factory-made</h4>
+                                <p>PDC + caldaia condensazione/biomassa</p>
+                            </div>
+                            <div class="intervento-card">
+                                <div class="intervento-badge novita">NOVITÀ</div>
+                                <div class="intervento-icon">⚙️</div>
+                                <h4>Sistemi bivalenti add-on</h4>
+                                <p>Pompa di calore aggiunta</p>
+                            </div>
+                            <div class="intervento-card">
+                                <div class="intervento-icon">🪵</div>
+                                <h4>Generatori a biomassa</h4>
+                                <p>Stufe, caldaie, termocamini</p>
+                                <div class="requisiti">Classe ambientale ≥4 stelle</div>
+                            </div>
+                            <div class="intervento-card">
+                                <div class="intervento-icon">☀️</div>
+                                <h4>Solare termico</h4>
+                                <p>ACS, riscaldamento, solar cooling</p>
+                                <div class="requisiti">Certificazione Solar Keymark</div>
+                            </div>
+                            <div class="intervento-card">
+                                <div class="intervento-icon">🚿</div>
+                                <h4>Scaldacqua a pompa di calore</h4>
+                                <p>Sostituzione scaldacqua elettrici/gas</p>
+                            </div>
+                            <div class="intervento-card">
+                                <div class="intervento-icon">🏭</div>
+                                <h4>Teleriscaldamento efficiente</h4>
+                                <p>Allaccio a sistemi efficienti</p>
+                            </div>
+                            <div class="intervento-card">
+                                <div class="intervento-icon">⚡</div>
+                                <h4>Microcogenerazione da FER</h4>
+                                <p>Sostituzione impianti esistenti</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Confronto Section -->
+    <section id="confronto" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Confronto CT 2.0 vs CT 3.0</h2>
+                <p class="section-subtitle">Principali novità e differenze del nuovo Conto Termico</p>
+            </div>
+            
+            <div class="comparison-table">
+                <div class="table-header">
+                    <div class="table-cell aspect">Aspetto</div>
+                    <div class="table-cell ct20">Conto Termico 2.0</div>
+                    <div class="table-cell ct30">Conto Termico 3.0</div>
+                </div>
+                
+                <div class="table-row improvement">
+                    <div class="table-cell aspect">Beneficiari</div>
+                    <div class="table-cell ct20">Privati, aziende, PA, ESCO</div>
+                    <div class="table-cell ct30">
+                        Aggiunti: CER, Enti Terzo Settore, Imprese (categoria specifica)
+                        <span class="badge novita">NOVITÀ</span>
+                    </div>
+                </div>
+                
+                <div class="table-row improvement">
+                    <div class="table-cell aspect">Budget PA</div>
+                    <div class="table-cell ct20">200 milioni €</div>
+                    <div class="table-cell ct30">400 milioni € (raddoppiato) ⬆️</div>
+                </div>
+                
+                <div class="table-row reduction">
+                    <div class="table-cell aspect">Budget Privati</div>
+                    <div class="table-cell ct20">700 milioni €</div>
+                    <div class="table-cell ct30">500 milioni € (ridotto) ⬇️</div>
+                </div>
+                
+                <div class="table-row improvement">
+                    <div class="table-cell aspect">Privati terziario - Efficienza</div>
+                    <div class="table-cell ct20">NON ammessi</div>
+                    <div class="table-cell ct30">
+                        AMMESSI (isolamento, infissi, LED, ecc.) 
+                        <span class="badge novita">NOVITÀ</span>
+                    </div>
+                </div>
+                
+                <div class="table-row improvement">
+                    <div class="table-cell aspect">Nuovi interventi</div>
+                    <div class="table-cell ct20">-</div>
+                    <div class="table-cell ct30">
+                        Schermature, colonnine EV, fotovoltaico+accumulo, bivalenti, demolizione nZEB
+                        <span class="badge novita">NOVITÀ</span>
+                    </div>
+                </div>
+                
+                <div class="table-row improvement">
+                    <div class="table-cell aspect">Incentivo comuni piccoli</div>
+                    <div class="table-cell ct20">65%</div>
+                    <div class="table-cell ct30">100% per edifici pubblici ⬆️</div>
+                </div>
+                
+                <div class="table-row improvement">
+                    <div class="table-cell aspect">Termini presentazione</div>
+                    <div class="table-cell ct20">60 giorni</div>
+                    <div class="table-cell ct30">90 giorni ⬆️</div>
+                </div>
+                
+                <div class="table-row improvement">
+                    <div class="table-cell aspect">Fotovoltaico e colonnine</div>
+                    <div class="table-cell ct20">Non incentivati</div>
+                    <div class="table-cell ct30">
+                        Incentivati (solo con PDC)
+                        <span class="badge novita">NOVITÀ</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Come Accedere Section -->
+    <section id="accesso" class="section section--alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Come accedere</h2>
+                <p class="section-subtitle">Processo step-by-step per ottenere gli incentivi</p>
+            </div>
+            
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Verifica requisiti</h3>
+                        <ul class="step-list">
+                            <li>✓ Edificio esistente iscritto al catasto</li>
+                            <li>✓ Dotato di impianto climatizzazione</li>
+                            <li>✓ Disponibilità edificio (proprietà/diritto)</li>
+                            <li>✓ Sostituzione impianto (salvo eccezioni)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Realizzazione intervento</h3>
+                        <ul class="step-list">
+                            <li>👨‍🔧 Tecnico qualificato</li>
+                            <li>📋 Conformità normative</li>
+                            <li>🏆 Certificazioni prodotti</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Raccolta documentazione</h3>
+                        <div class="document-checklist">
+                            <div class="doc-item">
+                                <input type="checkbox" id="doc1" disabled>
+                                <label for="doc1">Scheda-domanda GSE</label>
+                            </div>
+                            <div class="doc-item">
+                                <input type="checkbox" id="doc2" disabled>
+                                <label for="doc2">APE post-intervento</label>
+                            </div>
+                            <div class="doc-item">
+                                <input type="checkbox" id="doc3" disabled>
+                                <label for="doc3">Fatture e bonifici parlanti</label>
+                            </div>
+                            <div class="doc-item">
+                                <input type="checkbox" id="doc4" disabled>
+                                <label for="doc4">Schede tecniche dispositivi</label>
+                            </div>
+                            <div class="doc-item">
+                                <input type="checkbox" id="doc5" disabled>
+                                <label for="doc5">Relazione tecnica</label>
+                            </div>
+                            <div class="doc-item">
+                                <input type="checkbox" id="doc6" disabled>
+                                <label for="doc6">Dichiarazione conformità</label>
+                            </div>
+                            <div class="doc-item">
+                                <input type="checkbox" id="doc7" disabled>
+                                <label for="doc7">Permessi edilizi (se richiesti)</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Presentazione domanda</h3>
+                        <div class="submission-info">
+                            <div class="info-item">
+                                <strong>Portale:</strong> GSE PortalTermico
+                            </div>
+                            <div class="info-item">
+                                <strong>Termine:</strong> 90 giorni da fine lavori
+                            </div>
+                            <div class="info-item">
+                                <strong>Modalità:</strong> Accesso diretto (privati) o Prenotazione (PA)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Erogazione incentivo</h3>
+                        <div class="payout-info">
+                            <div class="payout-item">
+                                <span class="payout-icon">⏰</span>
+                                <div class="payout-text">
+                                    <strong>Tempi:</strong> 60-120 giorni
+                                </div>
+                            </div>
+                            <div class="payout-item">
+                                <span class="payout-icon">💰</span>
+                                <div class="payout-text">
+                                    <strong>Modalità:</strong> Unica soluzione se &lt;5.000€
+                                </div>
+                            </div>
+                            <div class="payout-item">
+                                <span class="payout-icon">📅</span>
+                                <div class="payout-text">
+                                    <strong>Rate:</strong> Fino a 5 anni se &gt;5.000€
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Percentuali Section -->
+    <section id="percentuali" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Percentuali &amp; Massimali</h2>
+                <p class="section-subtitle">Incentivi e limiti per categoria di beneficiario</p>
+            </div>
+            
+            <div class="percentuali-grid">
+                <div class="percentuale-card privati">
+                    <div class="card-header">
+                        <h3>👥 Privati &amp; Imprese</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="percentage-main">
+                            <span class="percentage-value">65%</span>
+                            <span class="percentage-label">Standard</span>
+                        </div>
+                        <div class="percentage-secondary">
+                            <div class="secondary-item">
+                                <strong>Fotovoltaico:</strong> 20-40%
+                            </div>
+                        </div>
+                        <div class="massimali">
+                            <h4>Massimali</h4>
+                            <ul>
+                                <li>1.500 €/kW fotovoltaico (fino 20kW)</li>
+                                <li>1.000 €/kWh accumulo</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="percentuale-card pa">
+                    <div class="card-header">
+                        <h3>🏛️ Pubbliche Amministrazioni</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="percentage-main">
+                            <span class="percentage-value">100%</span>
+                            <span class="percentage-label">Massimo</span>
+                        </div>
+                        <div class="percentage-secondary">
+                            <div class="secondary-item">
+                                <strong>Standard:</strong> Fino al 65%
+                            </div>
+                        </div>
+                        <div class="condizioni">
+                            <h4>Condizioni per il 100%</h4>
+                            <ul>
+                                <li>✓ Comuni &lt;15.000 abitanti</li>
+                                <li>✓ Scuole pubbliche</li>
+                                <li>✓ Ospedali e strutture sanitarie</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="percentuale-card terzo-settore">
+                    <div class="card-header">
+                        <h3>🤝 Enti Terzo Settore</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="percentage-main">
+                            <span class="percentage-value">65-100%</span>
+                            <span class="percentage-label">Come PA</span>
+                        </div>
+                        <div class="equiparazione">
+                            <p>Gli Enti del Terzo Settore sono equiparati alle Pubbliche Amministrazioni per percentuali e condizioni di accesso agli incentivi.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info e Vantaggi Section -->
+    <section id="info" class="section section--alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Info &amp; Vantaggi</h2>
+                <p class="section-subtitle">Tutti i benefici del Conto Termico 3.0</p>
+            </div>
+            
+            <div class="vantaggi-grid">
+                <div class="vantaggio-item">
+                    <div class="vantaggio-icon">💰</div>
+                    <h4>Contributo a fondo perduto</h4>
+                </div>
+                <div class="vantaggio-item">
+                    <div class="vantaggio-icon">🏦</div>
+                    <h4>Erogazione diretta su c/c</h4>
+                </div>
+                <div class="vantaggio-item">
+                    <div class="vantaggio-icon">📊</div>
+                    <h4>No capienza fiscale</h4>
+                </div>
+                <div class="vantaggio-item">
+                    <div class="vantaggio-icon">💸</div>
+                    <h4>No limiti di reddito</h4>
+                </div>
+                <div class="vantaggio-item">
+                    <div class="vantaggio-icon">⚡</div>
+                    <h4>Tempi rapidi (60-120 gg)</h4>
+                </div>
+                <div class="vantaggio-item">
+                    <div class="vantaggio-icon">📋</div>
+                    <h4>Procedure semplificate</h4>
+                </div>
+                <div class="vantaggio-item">
+                    <div class="vantaggio-icon">👥</div>
+                    <h4>Ampliamento beneficiari</h4>
+                </div>
+                <div class="vantaggio-item">
+                    <div class="vantaggio-icon">🚀</div>
+                    <h4>Nuove tecnologie incluse</h4>
+                </div>
+            </div>
+            
+            <div class="info-operative">
+                <h3>Informazioni operative</h3>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <strong>Decreto:</strong> D.M. 7 agosto 2025 - MASE
+                    </div>
+                    <div class="info-item">
+                        <strong>Pubblicazione GU:</strong> 26 settembre 2025
+                    </div>
+                    <div class="info-item">
+                        <strong>Entrata in vigore:</strong> 25 dicembre 2025
+                    </div>
+                    <div class="info-item">
+                        <strong>Portale operativo:</strong> Febbraio 2026
+                    </div>
+                    <div class="info-item">
+                        <strong>Budget totale:</strong> 900 milioni €/anno
+                    </div>
+                    <div class="info-item">
+                        <strong>Portale:</strong> GSE PortalTermico
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cta-section">
+                <button class="btn btn--primary btn--lg" onclick="simulateDownload()">📄 Scarica riepilogo PDF</button>
+                <button class="btn btn--outline btn--lg" onclick="window.open('https://gse.it', '_blank')">🌐 Visita sito GSE</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Riferimenti normativi</h4>
+                    <ul>
+                        <li>D.M. 7 agosto 2025 - MASE</li>
+                        <li>Pubblicato in GU n. 226 del 26/09/2025</li>
+                        <li>In vigore dal 25 dicembre 2025</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Link utili</h4>
+                    <ul>
+                        <li><a href="https://gse.it" target="_blank">Gestore Servizi Energetici (GSE)</a></li>
+                        <li><a href="https://gse.it/servizi-per-te/efficienza-energetica/conto-termico" target="_blank">Conto Termico GSE</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contatti</h4>
+                    <p>Per informazioni specifiche contattare direttamente il GSE attraverso i canali ufficiali.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Presentazione Conto Termico 3.0 - Solo scopo informativo</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
