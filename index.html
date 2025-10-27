@@ -18,14 +18,22 @@
                 <li class="nav-item">
                     <a href="#home" class="nav-link active">Home</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item dropdown">
                     <a href="#beneficiari" class="nav-link">Chi può accedere</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item dropdown">
                     <a href="#interventi" class="nav-link">Interventi ammessi</a>
+                    <ul class="nav-submenu">
+                        <li><a href="#interventi" data-tab="efficienza">Efficienza energetica</a></li>
+                        <li><a href="#interventi" data-tab="rinnovabili">Fonti rinnovabili termiche</a></li>
+                    </ul>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item dropdown">
                     <a href="#confronto" class="nav-link">Confronto CT 2.0 vs 3.0</a>
+                    <ul class="nav-submenu">
+                        <li><a href="#confronto" data-confronto-tab="generale">Tabella generale</a></li>
+                        <li><a href="#confronto" data-confronto-tab="fer-dettaglio">Focus fonti rinnovabili</a></li>
+                    </ul>
                 </li>
                 <li class="nav-item">
                     <a href="#accesso" class="nav-link">Come accedere</a>
@@ -70,12 +78,811 @@
                     </div>
                 </div>
                 <div class="hero-actions">
-                    <button class="btn btn--primary btn--lg" onclick="scrollToSection('beneficiari')">Inizia esplorazione</button>
+                    <button class="btn btn--primary btn--lg" onclick="scrollToSection('beneficiari')">Inizia</button>
                     <button class="btn btn--outline btn--lg" onclick="scrollToSection('confronto')">Confronta con CT 2.0</button>
+                </div>
+                <div class="hero-badge">
+                    <span class="badge badge--info">📅 Aggiornato con fonti post 7 agosto 2025</span>
+                    </div>
+                    
+                    <div id="fer-dettaglio-confronto-tab" class="confronto-tab-panel">
+                        <div class="fer-comparison-intro">
+                            <h3>Focus Fonti Rinnovabili - Confronto Dettagliato CT 2.0 vs CT 3.0</h3>
+                            <p>Analisi approfondita delle differenze per ogni tecnologia rinnovabile tra Conto Termico 2.0 e 3.0</p>
+                        </div>
+                        
+                        <div class="fer-comparison-grid">
+                            <div class="fer-comparison-card">
+                                <h4>🌡️ Pompe di Calore</h4>
+                                <div class="comparison-columns">
+                                    <div class="comparison-column ct20">
+                                        <h5>CT 2.0</h5>
+                                        <ul>
+                                            <li>❌ Incentivo non su SCOP stagionale</li>
+                                            <li>❌ Solo factory-made</li>
+                                            <li>❌ VRF sostituzione completa</li>
+                                            <li>❌ No add-on</li>
+                                            <li>❌ Soglia unica 5.000€</li>
+                                        </ul>
+                                    </div>
+                                    <div class="comparison-column ct30">
+                                        <h5>CT 3.0</h5>
+                                        <ul>
+                                            <li>✅ Incentivo SU SCOP stagionale</li>
+                                            <li>✅ Factory-made + bivalenti + add-on</li>
+                                            <li>✅ VRF solo unità esterna</li>
+                                            <li>✅ Add-on NOVITÀ (PDC a caldaia ≤5 anni)</li>
+                                            <li>✅ Soglia unica 15.000&euro;</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="fer-comparison-card">
+                                <h4>🪵 Generatori Biomassa</h4>
+                                <div class="comparison-columns">
+                                    <div class="comparison-column ct20">
+                                        <h5>CT 2.0</h5>
+                                        <ul>
+                                            <li>❌ ≥3 stelle</li>
+                                            <li>❌ Emissioni meno stringenti</li>
+                                            <li>❌ Requisiti generici</li>
+                                        </ul>
+                                    </div>
+                                    <div class="comparison-column ct30">
+                                        <h5>CT 3.0</h5>
+                                        <ul>
+                                            <li>✅ ≥4 stelle (da biomassa)</li>
+                                            <li>✅ ≥5 stelle (da non biomassa)</li>
+                                            <li>✅ Emissioni ≤20 mg/Nm³</li>
+                                            <li>✅ Rendimento ≥85%</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="fer-comparison-card">
+                                <h4>☀️ Solare Termico</h4>
+                                <div class="comparison-columns">
+                                    <div class="comparison-column ct20">
+                                        <h5>CT 2.0</h5>
+                                        <ul>
+                                            <li>❌ Coefficienti fissi</li>
+                                            <li>❌ Non calibrati su dimensione</li>
+                                        </ul>
+                                    </div>
+                                    <div class="comparison-column ct30">
+                                        <h5>CT 3.0</h5>
+                                        <ul>
+                                            <li>✅ Coefficienti calibrati su dimensione</li>
+                                            <li>✅ Premiano impianti potenti</li>
+                                            <li>✅ ACS &le;12m&sup2;: 0,35&euro;/kWh</li>
+                                            <li>✅ ACS+risc &le;12m&sup2;: 0,36&euro;/kWh</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="fer-comparison-card">
+                                <h4>🚿 Scaldacqua PDC</h4>
+                                <div class="comparison-columns">
+                                    <div class="comparison-column ct20">
+                                        <h5>CT 2.0</h5>
+                                        <ul>
+                                            <li>❌ Incentivo % spese</li>
+                                            <li>❌ Calcolo complesso</li>
+                                        </ul>
+                                    </div>
+                                    <div class="comparison-column ct30">
+                                        <h5>CT 3.0</h5>
+                                        <ul>
+                                            <li>✅ Cifre fisse 400-900€</li>
+                                            <li>✅ Calcolo semplificato</li>
+                                            <li>✅ Classe A &le;150L: 400&euro;</li>
+                                            <li>✅ Classe &gt;A &gt;150L: 900&euro;</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="fer-comparison-card highlight-novita">
+                                <h4>☀️ Fotovoltaico + Accumulo</h4>
+                                <div class="comparison-columns">
+                                    <div class="comparison-column ct20">
+                                        <h5>CT 2.0</h5>
+                                        <ul>
+                                            <li>🚫 NON AMMESSO</li>
+                                        </ul>
+                                    </div>
+                                    <div class="comparison-column ct30">
+                                        <h5>CT 3.0</h5>
+                                        <ul>
+                                            <li>🎆 AMMESSO (NOVITÀ)</li>
+                                            <li>✅ Solo con PDC elettrica</li>
+                                            <li>✅ PA/terziario, 20-40%</li>
+                                            <li>✅ Max 1.500&euro;/kW FTV</li>
+                                            <li>✅ Max 1.000&euro;/kWh accumulo</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="fer-comparison-card highlight-novita">
+                                <h4>🚗 Colonnine EV</h4>
+                                <div class="comparison-columns">
+                                    <div class="comparison-column ct20">
+                                        <h5>CT 2.0</h5>
+                                        <ul>
+                                            <li>🚫 NON AMMESSO</li>
+                                        </ul>
+                                    </div>
+                                    <div class="comparison-column ct30">
+                                        <h5>CT 3.0</h5>
+                                        <ul>
+                                            <li>🎆 AMMESSO (NOVITÀ)</li>
+                                            <li>✅ Solo con PDC elettrica</li>
+                                            <li>✅ PA/terziario, fino 65-100%</li>
+                                            <li>✅ Durata: 2 anni</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="fer-comparison-card highlight-esclusione">
+                                <h4>🔥 Caldaie Condensazione Fossili</h4>
+                                <div class="comparison-columns">
+                                    <div class="comparison-column ct20">
+                                        <h5>CT 2.0</h5>
+                                        <ul>
+                                            <li>✅ Ammesse per PA</li>
+                                        </ul>
+                                    </div>
+                                    <div class="comparison-column ct30">
+                                        <h5>CT 3.0</h5>
+                                        <ul>
+                                            <li>🚫 ESCLUSE per tutti</li>
+                                            <li>❌ Nessun incentivo</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="fer-comparison-card">
+                                <h4>🔧 Sistemi Ibridi/Bivalenti</h4>
+                                <div class="comparison-columns">
+                                    <div class="comparison-column ct20">
+                                        <h5>CT 2.0</h5>
+                                        <ul>
+                                            <li>❌ Solo ibridi factory-made</li>
+                                            <li>❌ Requisiti base</li>
+                                        </ul>
+                                    </div>
+                                    <div class="comparison-column ct30">
+                                        <h5>CT 3.0</h5>
+                                        <ul>
+                                            <li>✅ Factory-made + bivalenti in loco + add-on</li>
+                                            <li>✅ Requisiti più stringenti</li>
+                                            <li>✅ Termoregolazione Classi V-VIII</li>
+                                            <li>✅ Asseverazione se necessario</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    
+                    <div id="fer-dettaglio-confronto-tab" class="confronto-tab-panel">
+                        <div class="fer-comparison-intro">
+                            <h3>Confronto Dettagliato - Fonti Rinnovabili Termiche</h3>
+                            <p>Analisi approfondita delle differenze per ogni tecnologia rinnovabile tra CT 2.0 e CT 3.0</p>
+                        </div>
+                        
+                        <div class="fer-evolution-summary">
+                            <div class="evolution-stat">
+                                <div class="stat-icon">✅</div>
+                                <div class="stat-content">
+                                    <div class="stat-value">2 Nuove</div>
+                                    <div class="stat-label">Tecnologie aggiunte</div>
+                                    <div class="stat-detail">FTV+accumulo, Colonnine EV</div>
+                                </div>
+                            </div>
+                            <div class="evolution-stat">
+                                <div class="stat-icon">🔄</div>
+                                <div class="stat-content">
+                                    <div class="stat-value">3 Migliorate</div>
+                                    <div class="stat-label">Tecnologie potenziate</div>
+                                    <div class="stat-detail">PDC, Biomassa, Solare</div>
+                                </div>
+                            </div>
+                            <div class="evolution-stat">
+                                <div class="stat-icon">🚫</div>
+                                <div class="stat-content">
+                                    <div class="stat-value">1 Esclusa</div>
+                                    <div class="stat-label">Tecnologia eliminata</div>
+                                    <div class="stat-detail">Caldaie fossili</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="fer-comparison-grid">
+                            <div class="fer-comparison-card">
+                                <h4>🌡️ Pompe di Calore</h4>
+                                <div class="comparison-columns">
+                                    <div class="comparison-column ct20">
+                                        <h5>CT 2.0</h5>
+                                        <ul>
+                                            <li>❌ Incentivo non su SCOP stagionale</li>
+                                            <li>❌ Solo factory-made</li>
+                                            <li>❌ VRF sostituzione completa</li>
+                                            <li>❌ No add-on</li>
+                                            <li>❌ Soglia unica 5.000€</li>
+                                        </ul>
+                                    </div>
+                                    <div class="comparison-column ct30">
+                                        <h5>CT 3.0</h5>
+                                        <ul>
+                                            <li>✅ Incentivo SU SCOP stagionale</li>
+                                            <li>✅ Factory-made + bivalenti + add-on</li>
+                                            <li>✅ VRF solo unità esterna</li>
+                                            <li>✅ Add-on NOVITÀ (PDC a caldaia ≤5 anni)</li>
+                                            <li>✅ Soglia unica 15.000€</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="fer-comparison-card">
+                                <h4>🪵 Generatori Biomassa</h4>
+                                <div class="comparison-columns">
+                                    <div class="comparison-column ct20">
+                                        <h5>CT 2.0</h5>
+                                        <ul>
+                                            <li>❌ ≥3 stelle</li>
+                                            <li>❌ Emissioni meno stringenti</li>
+                                            <li>❌ Requisiti generici</li>
+                                        </ul>
+                                    </div>
+                                    <div class="comparison-column ct30">
+                                        <h5>CT 3.0</h5>
+                                        <ul>
+                                            <li>✅ ≥4 stelle (da biomassa)</li>
+                                            <li>✅ ≥5 stelle (da non biomassa)</li>
+                                            <li>✅ Emissioni ≤20 mg/Nm³</li>
+                                            <li>✅ Rendimento ≥85%</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="fer-comparison-card">
+                                <h4>☀️ Solare Termico</h4>
+                                <div class="comparison-columns">
+                                    <div class="comparison-column ct20">
+                                        <h5>CT 2.0</h5>
+                                        <ul>
+                                            <li>❌ Coefficienti fissi</li>
+                                            <li>❌ Non calibrati su dimensione</li>
+                                        </ul>
+                                    </div>
+                                    <div class="comparison-column ct30">
+                                        <h5>CT 3.0</h5>
+                                        <ul>
+                                            <li>✅ Coefficienti calibrati su dimensione</li>
+                                            <li>✅ Premiano impianti potenti</li>
+                                            <li>✅ ACS ≤12m²: 0,35€/kWh</li>
+                                            <li>✅ ACS+risc ≤12m²: 0,36€/kWh</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="fer-comparison-card">
+                                <h4>🚿 Scaldacqua PDC</h4>
+                                <div class="comparison-columns">
+                                    <div class="comparison-column ct20">
+                                        <h5>CT 2.0</h5>
+                                        <ul>
+                                            <li>❌ Incentivo % spese</li>
+                                            <li>❌ Calcolo complesso</li>
+                                        </ul>
+                                    </div>
+                                    <div class="comparison-column ct30">
+                                        <h5>CT 3.0</h5>
+                                        <ul>
+                                            <li>✅ Cifre fisse 400-900€</li>
+                                            <li>✅ Calcolo semplificato</li>
+                                            <li>✅ Classe A ≤150L: 400€</li>
+                                            <li>✅ Classe &gt;A &gt;150L: 900€</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="fer-comparison-card highlight-novita">
+                                <h4>☀️ Fotovoltaico + Accumulo</h4>
+                                <div class="comparison-columns">
+                                    <div class="comparison-column ct20">
+                                        <h5>CT 2.0</h5>
+                                        <ul>
+                                            <li>🚫 NON AMMESSO</li>
+                                        </ul>
+                                    </div>
+                                    <div class="comparison-column ct30">
+                                        <h5>CT 3.0</h5>
+                                        <ul>
+                                            <li>🎆 AMMESSO (NOVITÀ)</li>
+                                            <li>✅ Solo con PDC elettrica</li>
+                                            <li>✅ PA/terziario, 20-40%</li>
+                                            <li>✅ Max 1.500€/kW FTV</li>
+                                            <li>✅ Max 1.000€/kWh accumulo</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="fer-comparison-card highlight-novita">
+                                <h4>🚗 Colonnine EV</h4>
+                                <div class="comparison-columns">
+                                    <div class="comparison-column ct20">
+                                        <h5>CT 2.0</h5>
+                                        <ul>
+                                            <li>🚫 NON AMMESSO</li>
+                                        </ul>
+                                    </div>
+                                    <div class="comparison-column ct30">
+                                        <h5>CT 3.0</h5>
+                                        <ul>
+                                            <li>🎆 AMMESSO (NOVITÀ)</li>
+                                            <li>✅ Solo con PDC elettrica</li>
+                                            <li>✅ PA/terziario, fino 65-100%</li>
+                                            <li>✅ Durata: 2 anni</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="fer-comparison-card highlight-esclusione">
+                                <h4>🔥 Caldaie Condensazione Fossili</h4>
+                                <div class="comparison-columns">
+                                    <div class="comparison-column ct20">
+                                        <h5>CT 2.0</h5>
+                                        <ul>
+                                            <li>✅ Ammesse per PA</li>
+                                        </ul>
+                                    </div>
+                                    <div class="comparison-column ct30">
+                                        <h5>CT 3.0</h5>
+                                        <ul>
+                                            <li>🚫 ESCLUSE per tutti</li>
+                                            <li>❌ Nessun incentivo</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="fer-comparison-card">
+                                <h4>🔧 Sistemi Ibridi/Bivalenti</h4>
+                                <div class="comparison-columns">
+                                    <div class="comparison-column ct20">
+                                        <h5>CT 2.0</h5>
+                                        <ul>
+                                            <li>❌ Solo ibridi factory-made</li>
+                                            <li>❌ Requisiti base</li>
+                                        </ul>
+                                    </div>
+                                    <div class="comparison-column ct30">
+                                        <h5>CT 3.0</h5>
+                                        <ul>
+                                            <li>✅ Factory-made + bivalenti in loco + add-on</li>
+                                            <li>✅ Requisiti più stringenti</li>
+                                            <li>✅ Termoregolazione Classi V-VIII</li>
+                                            <li>✅ Asseverazione se necessario</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+                    
+                    <div id="fer-dettaglio-confronto-tab" class="confronto-tab-panel">
+                        <div class="fer-comparison-intro">
+                            <h3>Focus Fonti Rinnovabili - Confronto Dettagliato CT 2.0 vs CT 3.0</h3>
+                            <p>Analisi approfondita delle differenze per ogni tecnologia rinnovabile tra Conto Termico 2.0 e 3.0</p>
+                        </div>
+                        
+                        <div class="fer-evolution-summary">
+                            <div class="evolution-stat">
+                                <div class="stat-icon">✅</div>
+                                <div class="stat-content">
+                                    <div class="stat-value">2 Nuove</div>
+                                    <div class="stat-label">Tecnologie aggiunte</div>
+                                    <div class="stat-detail">FTV+accumulo, Colonnine EV</div>
+                                </div>
+                            </div>
+                            <div class="evolution-stat">
+                                <div class="stat-icon">🔄</div>
+                                <div class="stat-content">
+                                    <div class="stat-value">6 Migliorate</div>
+                                    <div class="stat-label">Tecnologie potenziate</div>
+                                    <div class="stat-detail">PDC, Biomassa, Solare, Scaldacqua, Ibridi, Bivalenti</div>
+                                </div>
+                            </div>
+                            <div class="evolution-stat">
+                                <div class="stat-icon">🚫</div>
+                                <div class="stat-content">
+                                    <div class="stat-value">1 Esclusa</div>
+                                    <div class="stat-label">Tecnologia eliminata</div>
+                                    <div class="stat-detail">Caldaie fossili</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="fer-comparison-grid">
+                            <div class="fer-comparison-card">
+                                <h4>🌡️ Pompe di Calore</h4>
+                                <div class="comparison-columns">
+                                    <div class="comparison-column ct20">
+                                        <h5>CT 2.0</h5>
+                                        <ul>
+                                            <li>❌ Incentivo NON su SCOP stagionale</li>
+                                            <li>❌ Solo sistemi ibridi factory-made</li>
+                                            <li>❌ VRF/VRV sostituzione completa</li>
+                                            <li>❌ Add-on non previste</li>
+                                        </ul>
+                                    </div>
+                                    <div class="comparison-column ct30">
+                                        <h5>CT 3.0</h5>
+                                        <ul>
+                                            <li>✅ Incentivo SU SCOP stagionale (premiano performanti)</li>
+                                            <li>✅ Factory-made + bivalenti + add-on</li>
+                                            <li>✅ VRF/VRV solo unità esterna</li>
+                                            <li>✅ Add-on NOVITÀ (PDC a caldaia ≤5 anni)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="fer-comparison-card">
+                                <h4>🌲 Generatori Biomassa</h4>
+                                <div class="comparison-columns">
+                                    <div class="comparison-column ct20">
+                                        <h5>CT 2.0</h5>
+                                        <ul>
+                                            <li>≥3 stelle (D.M. 186/2017)</li>
+                                        </ul>
+                                    </div>
+                                    <div class="comparison-column ct30">
+                                        <h5>CT 3.0</h5>
+                                        <ul>
+                                            <li>✅ ≥4 stelle (da biomassa)</li>
+                                            <li>✅ ≥5 stelle (da non biomassa)</li>
+                                            <li>✅ emissioni ≤20 mg/Nm³</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="fer-comparison-card">
+                                <h4>☀️ Solare Termico</h4>
+                                <div class="comparison-columns">
+                                    <div class="comparison-column ct20">
+                                        <h5>CT 2.0</h5>
+                                        <ul>
+                                            <li>Coefficienti valorizzazione fissi</li>
+                                        </ul>
+                                    </div>
+                                    <div class="comparison-column ct30">
+                                        <h5>CT 3.0</h5>
+                                        <ul>
+                                            <li>✅ Coefficienti calibrati su dimensione, premiano impianti potenti</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="fer-comparison-card">
+                                <h4>💧 Scaldacqua PDC</h4>
+                                <div class="comparison-columns">
+                                    <div class="comparison-column ct20">
+                                        <h5>CT 2.0</h5>
+                                        <ul>
+                                            <li>Incentivo percentuale spese</li>
+                                        </ul>
+                                    </div>
+                                    <div class="comparison-column ct30">
+                                        <h5>CT 3.0</h5>
+                                        <ul>
+                                            <li>✅ Cifra fissa 400-900€ secondo capacità e classe</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="fer-comparison-card highlight-novita">
+                                <h4>⚡ Fotovoltaico + Accumulo</h4>
+                                <div class="comparison-columns">
+                                    <div class="comparison-column ct20">
+                                        <h5>CT 2.0</h5>
+                                        <ul>
+                                            <li>🚫 NON AMMESSO</li>
+                                        </ul>
+                                    </div>
+                                    <div class="comparison-column ct30">
+                                        <h5>CT 3.0</h5>
+                                        <ul>
+                                            <li>🎆 AMMESSO (solo PDC, 20-40%, max 1.500€/kW FTV, 1.000€/kWh accumulo)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="fer-comparison-card highlight-novita">
+                                <h4>🔌 Colonnine Ricarica EV</h4>
+                                <div class="comparison-columns">
+                                    <div class="comparison-column ct20">
+                                        <h5>CT 2.0</h5>
+                                        <ul>
+                                            <li>🚫 NON AMMESSO</li>
+                                        </ul>
+                                    </div>
+                                    <div class="comparison-column ct30">
+                                        <h5>CT 3.0</h5>
+                                        <ul>
+                                            <li>🎆 AMMESSO (solo PDC, 65-100%)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="fer-comparison-card highlight-esclusione">
+                                <h4>🚫 Caldaie Condensazione Fossili</h4>
+                                <div class="comparison-columns">
+                                    <div class="comparison-column ct20">
+                                        <h5>CT 2.0</h5>
+                                        <ul>
+                                            <li>✅ Ammesse PA</li>
+                                        </ul>
+                                    </div>
+                                    <div class="comparison-column ct30">
+                                        <h5>CT 3.0</h5>
+                                        <ul>
+                                            <li>🚫 ESCLUSE tutti</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="fer-comparison-card">
+                                <h4>⚙️ Sistemi Ibridi/Bivalenti</h4>
+                                <div class="comparison-columns">
+                                    <div class="comparison-column ct20">
+                                        <h5>CT 2.0</h5>
+                                        <ul>
+                                            <li>Solo factory-made</li>
+                                        </ul>
+                                    </div>
+                                    <div class="comparison-column ct30">
+                                        <h5>CT 3.0</h5>
+                                        <ul>
+                                            <li>✅ Factory-made + bivalenti in loco + add-on, requisiti stringenti</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    
+                    <div id="fer-dettaglio-confronto-tab" class="confronto-tab-panel">
+                        <div class="fer-comparison-intro">
+                            <h3>Focus Fonti Rinnovabili - Confronto Dettagliato CT 2.0 vs CT 3.0</h3>
+                            <p>Analisi approfondita delle differenze per ogni tecnologia rinnovabile tra Conto Termico 2.0 e 3.0</p>
+                        </div>
+                        
+                        <div class="fer-evolution-summary">
+                            <div class="evolution-stat">
+                                <div class="stat-icon">✅</div>
+                                <div class="stat-content">
+                                    <div class="stat-value">2 Nuove</div>
+                                    <div class="stat-label">Tecnologie aggiunte</div>
+                                    <div class="stat-detail">FTV+accumulo, Colonnine EV</div>
+                                </div>
+                            </div>
+                            <div class="evolution-stat">
+                                <div class="stat-icon">🔄</div>
+                                <div class="stat-content">
+                                    <div class="stat-value">6 Migliorate</div>
+                                    <div class="stat-label">Tecnologie potenziate</div>
+                                    <div class="stat-detail">PDC, Biomassa, Solare, Scaldacqua, Ibridi, Bivalenti</div>
+                                </div>
+                            </div>
+                            <div class="evolution-stat">
+                                <div class="stat-icon">🚫</div>
+                                <div class="stat-content">
+                                    <div class="stat-value">1 Esclusa</div>
+                                    <div class="stat-label">Tecnologia eliminata</div>
+                                    <div class="stat-detail">Caldaie fossili</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="fer-comparison-grid">
+                            <div class="fer-comparison-card">
+                                <h4>🔥 Pompe di Calore</h4>
+                                <div class="comparison-columns">
+                                    <div class="comparison-column ct20">
+                                        <h5>CT 2.0</h5>
+                                        <ul>
+                                            <li>Incentivo NON su SCOP stagionale</li>
+                                            <li>Solo ibridi factory-made</li>
+                                            <li>VRF/VRV sostituzione completa</li>
+                                            <li>Add-on non previste</li>
+                                        </ul>
+                                    </div>
+                                    <div class="comparison-column ct30">
+                                        <h5>CT 3.0</h5>
+                                        <ul>
+                                            <li>✅ Incentivo SU SCOP stagionale (premiano performanti)</li>
+                                            <li>✅ Factory-made + bivalenti + add-on</li>
+                                            <li>✅ VRF/VRV solo unità esterna</li>
+                                            <li>✅ Add-on NOVITÀ (PDC a caldaia ≤5 anni)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="fer-comparison-card">
+                                <h4>🌲 Generatori a Biomassa</h4>
+                                <div class="comparison-columns">
+                                    <div class="comparison-column ct20">
+                                        <h5>CT 2.0</h5>
+                                        <ul>
+                                            <li>≥3 stelle (D.M. 186/2017)</li>
+                                            <li>Rendimento ≥85%, emissioni basse</li>
+                                        </ul>
+                                    </div>
+                                    <div class="comparison-column ct30">
+                                        <h5>CT 3.0</h5>
+                                        <ul>
+                                            <li>✅ ≥4 stelle (da biomassa), ≥5 stelle (da non biomassa)</li>
+                                            <li>✅ Rendimento ≥85%, emissioni ≤20 mg/Nm³</li>
+                                            <li>✅ Certificazione 4-5 stelle obbligatoria</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="fer-comparison-card">
+                                <h4>☀️ Solare Termico</h4>
+                                <div class="comparison-columns">
+                                    <div class="comparison-column ct20">
+                                        <h5>CT 2.0</h5>
+                                        <ul>
+                                            <li>Coefficienti valorizzazione fissi</li>
+                                            <li>Incentivo non calibrato su dimensione</li>
+                                        </ul>
+                                    </div>
+                                    <div class="comparison-column ct30">
+                                        <h5>CT 3.0</h5>
+                                        <ul>
+                                            <li>✅ Coefficienti aggiornati calibrati su dimensione</li>
+                                            <li>✅ Incentivo calibrato per premiare impianti potenti</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="fer-comparison-card">
+                                <h4>💧 Scaldacqua a Pompa di Calore</h4>
+                                <div class="comparison-columns">
+                                    <div class="comparison-column ct20">
+                                        <h5>CT 2.0</h5>
+                                        <ul>
+                                            <li>Incentivo percentuale delle spese sostenute</li>
+                                        </ul>
+                                    </div>
+                                    <div class="comparison-column ct30">
+                                        <h5>CT 3.0</h5>
+                                        <ul>
+                                            <li>✅ Incentivo cifra fissa 400-900€</li>
+                                            <li>✅ Secondo capacità (≤150L o &gt;150L) e classe energetica (A o superiore)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="fer-comparison-card highlight-novita">
+                                <h4>⚡ Fotovoltaico + Accumulo</h4>
+                                <div class="comparison-columns">
+                                    <div class="comparison-column ct20">
+                                        <h5>CT 2.0</h5>
+                                        <ul>
+                                            <li>❌ NON AMMESSO</li>
+                                        </ul>
+                                    </div>
+                                    <div class="comparison-column ct30">
+                                        <h5>CT 3.0</h5>
+                                        <ul>
+                                            <li>🎆 ✅ AMMESSO (GRANDE NOVITÀ)</li>
+                                            <li>✅ Solo abbinato a PDC elettrica</li>
+                                            <li>✅ Solo PA e terziario (NO residenziale)</li>
+                                            <li>✅ Incentivo 20-40%</li>
+                                            <li>✅ Max 1.500€/kW FTV (fino 20kW), 1.000€/kWh accumulo</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="fer-comparison-card highlight-novita">
+                                <h4>🔌 Colonnine Ricarica Veicoli Elettrici</h4>
+                                <div class="comparison-columns">
+                                    <div class="comparison-column ct20">
+                                        <h5>CT 2.0</h5>
+                                        <ul>
+                                            <li>❌ NON AMMESSO</li>
+                                        </ul>
+                                    </div>
+                                    <div class="comparison-column ct30">
+                                        <h5>CT 3.0</h5>
+                                        <ul>
+                                            <li>🎆 ✅ AMMESSO (GRANDE NOVITÀ)</li>
+                                            <li>✅ Solo abbinate a PDC elettrica</li>
+                                            <li>✅ Solo PA e terziario (NO residenziale)</li>
+                                            <li>✅ Incentivo fino 65% (100% PA)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="fer-comparison-card highlight-esclusione">
+                                <h4>🚫 Caldaie a Condensazione Fossili</h4>
+                                <div class="comparison-columns">
+                                    <div class="comparison-column ct20">
+                                        <h5>CT 2.0</h5>
+                                        <ul>
+                                            <li>✅ Ammesse per Pubbliche Amministrazioni</li>
+                                        </ul>
+                                    </div>
+                                    <div class="comparison-column ct30">
+                                        <h5>CT 3.0</h5>
+                                        <ul>
+                                            <li>❌ ESCLUSE per tutti i beneficiari</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="fer-comparison-card">
+                                <h4>⚙️ Sistemi Ibridi/Bivalenti</h4>
+                                <div class="comparison-columns">
+                                    <div class="comparison-column ct20">
+                                        <h5>CT 2.0</h5>
+                                        <ul>
+                                            <li>Solo ibridi factory-made</li>
+                                        </ul>
+                                    </div>
+                                    <div class="comparison-column ct30">
+                                        <h5>CT 3.0</h5>
+                                        <ul>
+                                            <li>✅ Factory-made + bivalenti in loco + add-on</li>
+                                            <li>✅ Requisiti più stringenti</li>
+                                            <li>✅ Termoregolazione avanzata</li>
+                                            <li>✅ Compatibilità certificata</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+    
+
 
     <!-- Beneficiari Section -->
     <section id="beneficiari" class="section">
@@ -164,56 +971,65 @@
                             <strong>Destinatari:</strong> PA, Enti Terzo Settore, Privati terziario <span class="highlight-red">(NO residenziale)</span>
                         </div>
                         <div class="interventi-grid">
-                            <div class="intervento-card">
+                            <div class="intervento-card" onclick="openModal('isolamento-modal')">
                                 <div class="intervento-icon">🧱</div>
                                 <h4>Isolamento termico</h4>
                                 <p>Cappotto pareti, coperture, solai</p>
+                                <div class="card-action">👆 Clicca per dettagli</div>
                             </div>
-                            <div class="intervento-card">
+                            <div class="intervento-card" onclick="openModal('infissi-modal')">
                                 <div class="intervento-icon">🪟</div>
                                 <h4>Sostituzione infissi</h4>
                                 <p>Serramenti ad alta efficienza</p>
+                                <div class="card-action">👆 Clicca per dettagli</div>
                             </div>
-                            <div class="intervento-card">
+                            <div class="intervento-card" onclick="openModal('schermature-modal')">
                                 <div class="intervento-badge novita">NOVITÀ</div>
                                 <div class="intervento-icon">🌞</div>
                                 <h4>Schermature solari</h4>
                                 <p>Frangisole, tende, dispositivi anti-surriscaldamento</p>
+                                <div class="card-action">👆 Clicca per dettagli</div>
                             </div>
-                            <div class="intervento-card">
+                            <div class="intervento-card" onclick="openModal('led-modal')">
                                 <div class="intervento-icon">💡</div>
                                 <h4>Illuminazione LED</h4>
                                 <p>Relamping interno ed esterno</p>
+                                <div class="card-action">👆 Clicca per dettagli</div>
                             </div>
-                            <div class="intervento-card">
+                            <div class="intervento-card" onclick="openModal('automation-modal')">
                                 <div class="intervento-icon">🤖</div>
                                 <h4>Building automation</h4>
                                 <p>Sistemi BACS conformi CEI EN 15232</p>
+                                <div class="card-action">👆 Clicca per dettagli</div>
                             </div>
-                            <div class="intervento-card">
+                            <div class="intervento-card" onclick="openModal('nzeb-modal')">
                                 <div class="intervento-icon">🏢</div>
                                 <h4>Trasformazione in nZEB</h4>
                                 <p>Edifici a energia quasi zero</p>
+                                <div class="card-action">👆 Clicca per dettagli</div>
                             </div>
-                            <div class="intervento-card">
+                            <div class="intervento-card" onclick="openModal('demolizione-modal')">
                                 <div class="intervento-badge novita">NOVITÀ</div>
                                 <div class="intervento-icon">🏗️</div>
                                 <h4>Demolizione e ricostruzione nZEB</h4>
                                 <p>Solo PA, ampliamento fino al 25%</p>
+                                <div class="card-action">👆 Clicca per dettagli</div>
                             </div>
-                            <div class="intervento-card">
+                            <div class="intervento-card" onclick="openModal('colonnine-modal')">
                                 <div class="intervento-badge novita">NOVITÀ</div>
                                 <div class="intervento-badge special">Solo con PDC</div>
                                 <div class="intervento-icon">🚗</div>
                                 <h4>Colonnine ricarica EV</h4>
                                 <p>Solo se abbinate a pompa di calore elettrica</p>
+                                <div class="card-action">👆 Clicca per dettagli</div>
                             </div>
-                            <div class="intervento-card">
+                            <div class="intervento-card" onclick="openModal('fotovoltaico-modal')">
                                 <div class="intervento-badge novita">NOVITÀ</div>
                                 <div class="intervento-badge special">Solo con PDC</div>
                                 <div class="intervento-icon">☀️</div>
                                 <h4>Fotovoltaico con accumulo</h4>
                                 <p>Solo se abbinati a pompa di calore elettrica</p>
+                                <div class="card-action">👆 Clicca per dettagli</div>
                             </div>
                         </div>
                     </div>
@@ -223,49 +1039,57 @@
                             <strong>Destinatari:</strong> <span class="highlight-green">Tutti i beneficiari</span>
                         </div>
                         <div class="interventi-grid">
-                            <div class="intervento-card">
+                            <div class="intervento-card" onclick="openModal('pdc-elettriche-modal')">
                                 <div class="intervento-icon">🌡️</div>
                                 <h4>Pompe di calore elettriche</h4>
                                 <p>Aria-acqua, acqua-acqua, geotermiche</p>
-                                <div class="requisiti">COP minimo Ecodesign, cert. UNI EN 14825</div>
+                                <div class="requisiti">SCOP minimo Ecodesign, cert. UNI EN 14825</div>
+                                <div class="card-action">👆 Clicca per dettagli</div>
                             </div>
-                            <div class="intervento-card">
+                            <div class="intervento-card" onclick="openModal('pdc-gas-modal')">
                                 <div class="intervento-icon">🔥</div>
                                 <h4>Pompe di calore a gas</h4>
                                 <p>Sostituzione generatore esistente</p>
+                                <div class="card-action">👆 Clicca per dettagli</div>
                             </div>
-                            <div class="intervento-card">
+                            <div class="intervento-card" onclick="openModal('ibridi-modal')">
                                 <div class="intervento-icon">🔧</div>
                                 <h4>Sistemi ibridi factory-made</h4>
                                 <p>PDC + caldaia condensazione/biomassa</p>
+                                <div class="card-action">👆 Clicca per dettagli</div>
                             </div>
-                            <div class="intervento-card">
+                            <div class="intervento-card" onclick="openModal('bivalenti-modal')">
                                 <div class="intervento-badge novita">NOVITÀ</div>
                                 <div class="intervento-icon">⚙️</div>
-                                <h4>Sistemi bivalenti add-on</h4>
-                                <p>Pompa di calore aggiunta</p>
+                                <h4>Sistemi bivalenti a pompa di calore</h4>
+                                <p>PDC + caldaia installati in loco</p>
+                                <div class="card-action">👆 Clicca per dettagli</div>
                             </div>
-                            <div class="intervento-card">
+                            <div class="intervento-card" onclick="openModal('biomassa-modal')">
                                 <div class="intervento-icon">🪵</div>
                                 <h4>Generatori a biomassa</h4>
                                 <p>Stufe, caldaie, termocamini</p>
                                 <div class="requisiti">Classe ambientale ≥4 stelle</div>
+                                <div class="card-action">👆 Clicca per dettagli</div>
                             </div>
-                            <div class="intervento-card">
+                            <div class="intervento-card" onclick="openModal('solare-modal')">
                                 <div class="intervento-icon">☀️</div>
                                 <h4>Solare termico</h4>
                                 <p>ACS, riscaldamento, solar cooling</p>
                                 <div class="requisiti">Certificazione Solar Keymark</div>
+                                <div class="card-action">👆 Clicca per dettagli</div>
                             </div>
-                            <div class="intervento-card">
+                            <div class="intervento-card" onclick="openModal('scaldacqua-modal')">
                                 <div class="intervento-icon">🚿</div>
                                 <h4>Scaldacqua a pompa di calore</h4>
                                 <p>Sostituzione scaldacqua elettrici/gas</p>
+                                <div class="card-action">👆 Clicca per dettagli</div>
                             </div>
-                            <div class="intervento-card">
+                            <div class="intervento-card" onclick="openModal('teleriscaldamento-modal')">
                                 <div class="intervento-icon">🏭</div>
                                 <h4>Teleriscaldamento efficiente</h4>
-                                <p>Allaccio a sistemi efficienti</p>
+                                <p>Allaccio a reti FER</p>
+                                <div class="card-action">👆 Clicca per dettagli</div>
                             </div>
                             <div class="intervento-card">
                                 <div class="intervento-icon">⚡</div>
@@ -286,6 +1110,21 @@
                 <h2 class="section-title">Confronto CT 2.0 vs CT 3.0</h2>
                 <p class="section-subtitle">Principali novità e differenze del nuovo Conto Termico</p>
             </div>
+            
+            <div class="confronto-tabs">
+                <div class="confronto-tab-buttons">
+                    <button class="confronto-tab-btn active" data-confronto-tab="generale">
+                        <span class="tab-icon">📈</span>
+                        <span class="tab-text">Tabella Generale</span>
+                    </button>
+                    <button class="confronto-tab-btn" data-confronto-tab="fer-dettaglio">
+                        <span class="tab-icon">🌱</span>
+                        <span class="tab-text">Focus Fonti Rinnovabili</span>
+                    </button>
+                </div>
+                
+                <div class="confronto-tab-content">
+                    <div id="generale-confronto-tab" class="confronto-tab-panel active">
             
             <div class="comparison-table">
                 <div class="table-header">
@@ -343,6 +1182,12 @@
                     <div class="table-cell aspect">Termini presentazione</div>
                     <div class="table-cell ct20">60 giorni</div>
                     <div class="table-cell ct30">90 giorni ⬆️</div>
+                </div>
+                
+                <div class="table-row improvement">
+                    <div class="table-cell aspect">Soglia rata unica</div>
+                    <div class="table-cell ct20">5.000€</div>
+                    <div class="table-cell ct30">15.000€ (triplicata) ⬆️</div>
                 </div>
                 
                 <div class="table-row improvement">
@@ -460,13 +1305,19 @@
                             <div class="payout-item">
                                 <span class="payout-icon">💰</span>
                                 <div class="payout-text">
-                                    <strong>Modalità:</strong> Unica soluzione se &lt;5.000€
+                                    <strong>Unica soluzione:</strong> per incentivi inferiori a 15.000€
                                 </div>
                             </div>
                             <div class="payout-item">
                                 <span class="payout-icon">📅</span>
                                 <div class="payout-text">
-                                    <strong>Rate:</strong> Fino a 5 anni se &gt;5.000€
+                                    <strong>Rate fino a 5 anni:</strong> per incentivi pari o superiori a 15.000€
+                                </div>
+                            </div>
+                            <div class="payout-item">
+                                <span class="payout-icon">💳</span>
+                                <div class="payout-text">
+                                    Il contributo è erogato direttamente sul conto corrente del beneficiario
                                 </div>
                             </div>
                         </div>
@@ -545,6 +1396,219 @@
                         </div>
                         <div class="equiparazione">
                             <p>Gli Enti del Terzo Settore sono equiparati alle Pubbliche Amministrazioni per percentuali e condizioni di accesso agli incentivi.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="fer-dettaglio-confronto-tab" class="confronto-tab-panel">
+                    <div class="fer-comparison-intro">
+                        <h3>Confronto Dettagliato - Fonti Rinnovabili Termiche</h3>
+                        <p>Analisi approfondita delle differenze per ogni tecnologia rinnovabile tra CT 2.0 e CT 3.0</p>
+                    </div>
+                    
+                    <div class="fer-evolution-summary">
+                        <div class="evolution-stat">
+                            <div class="stat-icon">✅</div>
+                            <div class="stat-content">
+                                <div class="stat-value">2 Nuove</div>
+                                <div class="stat-label">Tecnologie aggiunte</div>
+                                <div class="stat-detail">FTV+accumulo, Colonnine EV</div>
+                            </div>
+                        </div>
+                        <div class="evolution-stat">
+                            <div class="stat-icon">🔄</div>
+                            <div class="stat-content">
+                                <div class="stat-value">3 Migliorate</div>
+                                <div class="stat-label">Tecnologie potenziate</div>
+                                <div class="stat-detail">PDC, Biomassa, Solare</div>
+                            </div>
+                        </div>
+                        <div class="evolution-stat">
+                            <div class="stat-icon">🚫</div>
+                            <div class="stat-content">
+                                <div class="stat-value">1 Esclusa</div>
+                                <div class="stat-label">Tecnologia eliminata</div>
+                                <div class="stat-detail">Caldaie fossili</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="fer-comparison-grid">
+                        <div class="fer-comparison-card">
+                            <h4>🌡️ Pompe di Calore</h4>
+                            <div class="comparison-columns">
+                                <div class="comparison-column ct20">
+                                    <h5>CT 2.0</h5>
+                                    <ul>
+                                        <li>❌ Incentivo non su SCOP stagionale</li>
+                                        <li>❌ Solo factory-made</li>
+                                        <li>❌ VRF sostituzione completa</li>
+                                        <li>❌ No add-on</li>
+                                        <li>❌ Soglia unica 5.000€</li>
+                                    </ul>
+                                </div>
+                                <div class="comparison-column ct30">
+                                    <h5>CT 3.0</h5>
+                                    <ul>
+                                        <li>✅ Incentivo SU SCOP stagionale</li>
+                                        <li>✅ Factory-made + bivalenti + add-on</li>
+                                        <li>✅ VRF solo unità esterna</li>
+                                        <li>✅ Add-on NOVITÀ (PDC a caldaia ≤5 anni)</li>
+                                        <li>✅ Soglia unica 15.000€</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="fer-comparison-card">
+                            <h4>🪵 Generatori Biomassa</h4>
+                            <div class="comparison-columns">
+                                <div class="comparison-column ct20">
+                                    <h5>CT 2.0</h5>
+                                    <ul>
+                                        <li>❌ ≥3 stelle</li>
+                                        <li>❌ Emissioni meno stringenti</li>
+                                        <li>❌ Requisiti generici</li>
+                                    </ul>
+                                </div>
+                                <div class="comparison-column ct30">
+                                    <h5>CT 3.0</h5>
+                                    <ul>
+                                        <li>✅ ≥4 stelle (da biomassa)</li>
+                                        <li>✅ ≥5 stelle (da non biomassa)</li>
+                                        <li>✅ Emissioni ≤20 mg/Nm³</li>
+                                        <li>✅ Rendimento ≥85%</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="fer-comparison-card">
+                            <h4>☀️ Solare Termico</h4>
+                            <div class="comparison-columns">
+                                <div class="comparison-column ct20">
+                                    <h5>CT 2.0</h5>
+                                    <ul>
+                                        <li>❌ Coefficienti fissi</li>
+                                        <li>❌ Non calibrati su dimensione</li>
+                                    </ul>
+                                </div>
+                                <div class="comparison-column ct30">
+                                    <h5>CT 3.0</h5>
+                                    <ul>
+                                        <li>✅ Coefficienti calibrati su dimensione</li>
+                                        <li>✅ Premiano impianti potenti</li>
+                                        <li>✅ ACS ≤12m²: 0,35€/kWh</li>
+                                        <li>✅ ACS+risc ≤12m²: 0,36€/kWh</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="fer-comparison-card">
+                            <h4>🚿 Scaldacqua PDC</h4>
+                            <div class="comparison-columns">
+                                <div class="comparison-column ct20">
+                                    <h5>CT 2.0</h5>
+                                    <ul>
+                                        <li>❌ Incentivo % spese</li>
+                                        <li>❌ Calcolo complesso</li>
+                                    </ul>
+                                </div>
+                                <div class="comparison-column ct30">
+                                    <h5>CT 3.0</h5>
+                                    <ul>
+                                        <li>✅ Cifre fisse 400-900€</li>
+                                        <li>✅ Calcolo semplificato</li>
+                                        <li>✅ Classe A ≤150L: 400€</li>
+                                        <li>✅ Classe &gt;A &gt;150L: 900€</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="fer-comparison-card highlight-novita">
+                            <h4>☀️ Fotovoltaico + Accumulo</h4>
+                            <div class="comparison-columns">
+                                <div class="comparison-column ct20">
+                                    <h5>CT 2.0</h5>
+                                    <ul>
+                                        <li>🚫 NON AMMESSO</li>
+                                    </ul>
+                                </div>
+                                <div class="comparison-column ct30">
+                                    <h5>CT 3.0</h5>
+                                    <ul>
+                                        <li>🎆 AMMESSO (NOVITÀ)</li>
+                                        <li>✅ Solo con PDC elettrica</li>
+                                        <li>✅ PA/terziario, 20-40%</li>
+                                        <li>✅ Max 1.500€/kW FTV</li>
+                                        <li>✅ Max 1.000€/kWh accumulo</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="fer-comparison-card highlight-novita">
+                            <h4>🚗 Colonnine EV</h4>
+                            <div class="comparison-columns">
+                                <div class="comparison-column ct20">
+                                    <h5>CT 2.0</h5>
+                                    <ul>
+                                        <li>🚫 NON AMMESSO</li>
+                                    </ul>
+                                </div>
+                                <div class="comparison-column ct30">
+                                    <h5>CT 3.0</h5>
+                                    <ul>
+                                        <li>🎆 AMMESSO (NOVITÀ)</li>
+                                        <li>✅ Solo con PDC elettrica</li>
+                                        <li>✅ PA/terziario, fino 65-100%</li>
+                                        <li>✅ Durata: 2 anni</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="fer-comparison-card highlight-esclusione">
+                            <h4>🔥 Caldaie Condensazione Fossili</h4>
+                            <div class="comparison-columns">
+                                <div class="comparison-column ct20">
+                                    <h5>CT 2.0</h5>
+                                    <ul>
+                                        <li>✅ Ammesse per PA</li>
+                                    </ul>
+                                </div>
+                                <div class="comparison-column ct30">
+                                    <h5>CT 3.0</h5>
+                                    <ul>
+                                        <li>🚫 ESCLUSE per tutti</li>
+                                        <li>❌ Nessun incentivo</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="fer-comparison-card">
+                            <h4>🔧 Sistemi Ibridi/Bivalenti</h4>
+                            <div class="comparison-columns">
+                                <div class="comparison-column ct20">
+                                    <h5>CT 2.0</h5>
+                                    <ul>
+                                        <li>❌ Solo ibridi factory-made</li>
+                                        <li>❌ Requisiti base</li>
+                                    </ul>
+                                </div>
+                                <div class="comparison-column ct30">
+                                    <h5>CT 3.0</h5>
+                                    <ul>
+                                        <li>✅ Factory-made + bivalenti in loco + add-on</li>
+                                        <li>✅ Requisiti più stringenti</li>
+                                        <li>✅ Termoregolazione Classi V-VIII</li>
+                                        <li>✅ Asseverazione se necessario</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -655,6 +1719,19 @@
             </div>
         </div>
     </footer>
+
+    <!-- Modals -->
+    <div id="modal-overlay" class="modal-overlay" onclick="closeModal()">
+        <div class="modal-container" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h2 id="modal-title"></h2>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="modal-content">
+                <!-- Dynamic content will be inserted here -->
+            </div>
+        </div>
+    </div>
 
     <script src="app.js"></script>
 </body>
